@@ -48,7 +48,11 @@ HOST-SUFFIX,24h-ad.24hstatic.com,REJECT
 HOST-SUFFIX,24h-ipad-ad.24hstatic.com,REJECT
 HOST-SUFFIX,ad-us.24hstatic.com,REJECT
 HOST-SUFFIX,ad.accesstrade.vn,REJECT
-DOMAIN-SUFFIX,aowpri.com
+DOMAIN-SUFFIX,aowpri.com,REJECT
+HOST-SUFFIX,scontent.fsgn5-11.fna.fbcdn.net,REJECT
+HOST-SUFFIX,ssl.p.jwpcdn.com,REJECT
+HOST-SUFFIX,o497639.ingest.sentry.io,REJECT
+HOST-SUFFIX,cdn.branch.io,REJECT
 HOST-SUFFIX,ad.org.vn,REJECT
 HOST-SUFFIX,ad.zing.vn,REJECT
 HOST-SUFFIX,ad360.vn,REJECT
