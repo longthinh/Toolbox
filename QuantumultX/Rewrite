@@ -27,7 +27,6 @@
 ^https?:\/\/.+\.googleapis.com/.+log_event url reject-img
 ^https?:\/\/.+\.googleapis.com/adsmeasurement url reject-img
 ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/att\/get url reject-img
-(^https?:\/\/(?!redirector)[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+)(ctier=L)(&.+) $1$4 header url reject-img
 ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+(&oad|ctier) url reject-img
 ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads url reject-img
 ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) url reject-img
