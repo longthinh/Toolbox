@@ -6,6 +6,11 @@
 ^https?://graph.facebook.com/network_ads_common url reject-img
 ^https?:\/\/.+\.facebook\.com\/adnw_logging url reject-img
 ^https?:\/\/.+\.facebook\.com\/adnw_sync url reject-img
+
+ctier=(?!A) url 302 ctier=A
+
+(^https?:\/\/.+\.googlevideo\.com\/.+)(&ctier=[A-Z])(&.+) url 302 $1$3
+
 ^https?:\/\/.+\.googlevideo\.com\/.+oad= url reject-img
 ^https?:\/\/.+\.googlevideo\.com\/.+owc= url reject-img
 ^https?:\/\/.+\.googlevideo\.com\/ptracking url reject-img
