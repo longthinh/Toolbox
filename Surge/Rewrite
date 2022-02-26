@@ -36,3 +36,5 @@ URL-REGEX,^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/att\/get
 URL-REGEX,^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event
 URL-REGEX,^https://youtubei.googleapis.com/youtubei/v1/player/ad_break
 URL-REGEX,^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext
+URL-REGEX,^https?:\/\/.+\.tiktokv\.com\/.+stats
+URL-REGEX,^https?:\/\/.+\.tiktokv\.com\/api\/ad

@@ -35,3 +35,5 @@
 ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event url reject-img
 ^https://youtubei.googleapis.com/youtubei/v1/player/ad_break url reject-img
 ^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext url reject-img
+^https?:\/\/.+\.tiktokv\.com\/.+stats url reject-img
+^https?:\/\/.+\.tiktokv\.com\/api\/ad url reject-img
