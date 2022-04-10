@@ -114,7 +114,7 @@ async function post_data(d) {
 }
 function notify(notifys) {
   notifys = notifys.join("\n");
-  $.notify("🛍 Wishlist - Leͥgeͣnͫd", "", notifys);
+  $.notify("🎁 Wishlist - Leͥgeͣnͫd", "", notifys);
 }
 function flag(x) {
   var flags = new Map([
