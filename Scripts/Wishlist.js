@@ -1,9 +1,9 @@
 const $ = new API("Wishlist", true);
-let apps = ["1512083481","1438344260","1591831530","1596063349","1594183379","1470774095","1559425430","1540325366","1524435907","1282297037","1517339257","1254940903","499470113","1442620678","1443988620"];
+let apps = ["1457369322","1512083481","1438344260","1591831530","1596063349","1594183379","1470774095","1559425430","1540325366","1524435907","1282297037","1517339257","1254940903","499470113","1442620678","1443988620"]; // appid
 if ($.read("apps") != "" && $.read("apps") != undefined) {
   apps = $.read("apps").split("，");
 }
-let reg = "vn";
+let reg = "vn"; // region
 if ($.read("reg") != "" && $.read("reg") != undefined) {
   reg = $.read("reg");
 }
@@ -42,7 +42,7 @@ function format_apps(x) {
 }
 async function post_data(d) {
   try {
-    let app_monitor = $.read("Wishlist");
+    let app_monitor = $.read("app_monitor");
     if (app_monitor === "" || app_monitor === undefined) {
       app_monitor = {};
     } else {
@@ -73,21 +73,21 @@ async function post_data(d) {
                   ) {
                     if (x.version !== app_monitor[x.trackId].v) {
                       notifys.push(
-                        `${flag(k)} 🎉 ${x.trackName} <Release/> ${x.version}`
+                        `🎉 ${x.trackName} · ${x.version}` // ${flag(k)} first line national flag
                       );
                     }
                     if (x.formattedPrice !== app_monitor[x.trackId].p) {
                       notifys.push(
-                        `${flag(k)} 💸 ${x.trackName} <Newprice/> ${x.formattedPrice}`
+                        `💸 ${x.trackName} · ${x.formattedPrice}` // ${flag(k)} first line national flag
                       );
                     }
                   }
                 } else {
                   notifys.push(
-                    `${flag(k)} 🎯 ${x.trackName} <Version/> ${x.version}`
+                    `🎯 ${x.trackName} · ${x.version}` // ${flag(k)} first line national flag
                   );
                   notifys.push(
-                    `${flag(k)} 💵 ${x.trackName} <Price/> ${x.formattedPrice}`
+                    `💵 ${x.trackName} · ${x.formattedPrice}` // ${flag(k)} first line national flag
                   );
                 }
               });
@@ -100,12 +100,12 @@ async function post_data(d) {
       })
     );
     infos = JSON.stringify(infos);
-    $.write(infos, "Wishlist");
+    $.write(infos, "app_monitor");
     if (notifys.length > 0) {
       notify(notifys);
       $.done();
     } else {
-      console.log("〽️ No volatility");
+      console.log("〽️ Nothing special");
       $.done();
     }
   } catch (e) {
@@ -114,16 +114,127 @@ async function post_data(d) {
 }
 function notify(notifys) {
   notifys = notifys.join("\n");
-  $.notify("🎁 Wishlist - Leͥgeͣnͫd", "", notifys);
+  console.log(JSON.stringify(notifys));
+  $.notify("${flag(reg)} Wishlist - Leͥgeͣnͫd", "", notifys);
 }
 function flag(x) {
   var flags = new Map([
+    ["AC", "🇦🇨"],
+    ["AF", "🇦🇫"],
+    ["AI", "🇦🇮"],
+    ["AL", "🇦🇱"],
+    ["AM", "🇦🇲"],
+    ["AQ", "🇦🇶"],
+    ["AR", "🇦🇷"],
+    ["AS", "🇦🇸"],
+    ["AT", "🇦🇹"],
+    ["AU", "🇦🇺"],
+    ["AW", "🇦🇼"],
+    ["AX", "🇦🇽"],
+    ["AZ", "🇦🇿"],
+    ["BB", "🇧🇧"],
+    ["BD", "🇧🇩"],
+    ["BE", "🇧🇪"],
+    ["BF", "🇧🇫"],
+    ["BG", "🇧🇬"],
+    ["BH", "🇧🇭"],
+    ["BI", "🇧🇮"],
+    ["BJ", "🇧🇯"],
+    ["BM", "🇧🇲"],
+    ["BN", "🇧🇳"],
+    ["BO", "🇧🇴"],
+    ["BR", "🇧🇷"],
+    ["BS", "🇧🇸"],
+    ["BT", "🇧🇹"],
+    ["BV", "🇧🇻"],
+    ["BW", "🇧🇼"],
+    ["BY", "🇧🇾"],
+    ["BZ", "🇧🇿"],
+    ["CA", "🇨🇦"],
+    ["CF", "🇨🇫"],
+    ["CH", "🇨🇭"],
+    ["CK", "🇨🇰"],
+    ["CL", "🇨🇱"],
+    ["CM", "🇨🇲"],
+    ["CN", "🇨🇳"],
+    ["CO", "🇨🇴"],
+    ["CP", "🇨🇵"],
+    ["CR", "🇨🇷"],
+    ["CU", "🇨🇺"],
+    ["CV", "🇨🇻"],
+    ["CW", "🇨🇼"],
+    ["CX", "🇨🇽"],
+    ["CY", "🇨🇾"],
+    ["CZ", "🇨🇿"],
+    ["DE", "🇩🇪"],
+    ["DG", "🇩🇬"],
+    ["DJ", "🇩🇯"],
+    ["DK", "🇩🇰"],
+    ["DM", "🇩🇲"],
+    ["DO", "🇩🇴"],
+    ["DZ", "🇩🇿"],
+    ["EA", "🇪🇦"],
+    ["EC", "🇪🇨"],
+    ["EE", "🇪🇪"],
+    ["EG", "🇪🇬"],
+    ["EH", "🇪🇭"],
+    ["ER", "🇪🇷"],
+    ["ES", "🇪🇸"],
+    ["ET", "🇪🇹"],
+    ["EU", "🇪🇺"],
+    ["FI", "🇫🇮"],
+    ["FJ", "🇫🇯"],
+    ["FK", "🇫🇰"],
+    ["FM", "🇫🇲"],
+    ["FO", "🇫🇴"],
+    ["FR", "🇫🇷"],
+    ["GA", "🇬🇦"],
+    ["GB", "🇬🇧"],
+    ["HK", "🇭🇰"],
+    ["ID", "🇮🇩"],
+    ["IE", "🇮🇪"],
+    ["IL", "🇮🇱"],
+    ["IM", "🇮🇲"],
+    ["IN", "🇮🇳"],
+    ["IS", "🇮🇸"],
+    ["IT", "🇮🇹"],
+    ["JP", "🇯🇵"],
+    ["KR", "🇰🇷"],
+    ["MO", "🇲🇴"],
+    ["MX", "🇲🇽"],
+    ["MY", "🇲🇾"],
+    ["NL", "🇳🇱"],
+    ["PH", "🇵🇭"],
+    ["RO", "🇷🇴"],
+    ["RS", "🇷🇸"],
+    ["RU", "🇷🇺"],
+    ["RW", "🇷🇼"],
+    ["SA", "🇸🇦"],
+    ["SB", "🇸🇧"],
+    ["SC", "🇸🇨"],
+    ["SD", "🇸🇩"],
+    ["SE", "🇸🇪"],
+    ["SG", "🇸🇬"],
+    ["TH", "🇹🇭"],
+    ["TN", "🇹🇳"],
+    ["TO", "🇹🇴"],
+    ["TR", "🇹🇷"],
+    ["TV", "🇹🇻"],
+    ["TW", "🇨🇳"],
+    ["UK", "🇬🇧"],
+    ["UM", "🇺🇲"],
     ["US", "🇺🇸"],
+    ["UY", "🇺🇾"],
+    ["UZ", "🇺🇿"],
+    ["VA", "🇻🇦"],
+    ["VE", "🇻🇪"],
+    ["VG", "🇻🇬"],
+    ["VI", "🇻🇮"],
     ["VN", "🇻🇳"],
   ]);
   return flags.get(x.toUpperCase());
 }
-
+ //ENV
 function ENV() {
   const isQX = typeof $task !== "undefined";
   const isLoon = typeof $loon !== "undefined";
@@ -281,15 +392,15 @@ function API(name = "untitled", debug = false) {
       };
     }
 
-    //Persistence
-    //Initialize cache
+    // persistence
+    // initialize cache
     initCache() {
       if (isQX) this.cache = JSON.parse($prefs.valueForKey(this.name) || "{}");
       if (isLoon || isSurge)
         this.cache = JSON.parse($persistentStore.read(this.name) || "{}");
 
       if (isNode) {
-        //Create a json for root cache
+        // create a json for root cache
         let fpath = "root.json";
         if (!this.node.fs.existsSync(fpath)) {
           this.node.fs.writeFileSync(
@@ -303,7 +414,7 @@ function API(name = "untitled", debug = false) {
         }
         this.root = {};
 
-        //Create a json file with the given name if not exists
+        // create a json file with the given name if not exists
         fpath = `${this.name}.json`;
         if (!this.node.fs.existsSync(fpath)) {
           this.node.fs.writeFileSync(
@@ -323,7 +434,7 @@ function API(name = "untitled", debug = false) {
       }
     }
 
-    //Store cache
+    // store cache
     persistCache() {
       const data = JSON.stringify(this.cache, null, 2);
       if (isQX) $prefs.setValueForKey(data, this.name);
@@ -404,7 +515,7 @@ function API(name = "untitled", debug = false) {
       this.persistCache();
     }
 
-    //Notification
+    // notification
     notify(title, subtitle = "", content = "", options = {}) {
       const openURL = options["open-url"];
       const mediaURL = options["media-url"];
@@ -447,7 +558,7 @@ function API(name = "untitled", debug = false) {
       }
     }
 
-    //Other helper functions
+    // other helper functions
     log(msg) {
       if (this.debug) console.log(`[${this.name}] LOG: ${this.stringify(msg)}`);
     }
