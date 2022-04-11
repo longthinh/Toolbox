@@ -1,5 +1,5 @@
 const $ = new API("Wishlist", true);
-let apps = ["1457369322","1512083481","1438344260","1591831530","1596063349","1594183379","1470774095","1559425430","1540325366","1524435907","1282297037","1517339257","1254940903","499470113","1442620678","1443988620"]; // appid
+let apps = ["1608870673","1457369322","1512083481","1438344260","1591831530","1596063349","1594183379","1470774095","1559425430","1540325366","1524435907","1282297037","1517339257","1254940903","499470113","1442620678","1443988620"]; // appid
 if ($.read("apps") != "" && $.read("apps") != undefined) {
   apps = $.read("apps").split("，");
 }
@@ -115,7 +115,7 @@ async function post_data(d) {
 function notify(notifys) {
   notifys = notifys.join("\n");
   console.log(JSON.stringify(notifys));
-  $.notify("${flag(reg)} Wishlist - Leͥgeͣnͫd", "", notifys);
+  $.notify(`${flag(reg)} Wishlist - Leͥgeͣnͫd`, ``, notifys);
 }
 function flag(x) {
   var flags = new Map([
