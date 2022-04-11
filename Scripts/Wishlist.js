@@ -1,5 +1,8 @@
 const $ = new API("Wishlist", true);
-let apps = ["502633252","932747118","1463298887","1608870673","1457369322","1512083481","1438344260","1591831530","1596063349","1594183379","1470774095","1559425430","1540325366","1524435907","1282297037","1517339257","1254940903","499470113","1442620678","1443988620"]; // appid
+let apps = ["1047223162","364901807","389801252","1065511007","1126386264","324684580","587366035","952813813","1105317682","1218718027","1304177471","373311252","1160167263","1073473333","1344204781","918751511","896694807","1312014438","1357644265","1210562295","1336634154","904237743","1126314052","1405459188","1373567447","1458212928","1436650069","1510265452","1032301823","959841449","373493387","450464147","1601434613","1049254261","502633252","932747118","1463298887","1608870673","1457369322","1512083481","1438344260","1591831530","1596063349","1594183379","1470774095","1559425430","1540325366","1524435907","1282297037","1517339257","1254940903","499470113","1442620678","1443988620"]; // appid
+/*
+https://apps.apple.com/vn/app/textastic-code-editor/id1049254261
+*/
 if ($.read("apps") != "" && $.read("apps") != undefined) {
   apps = $.read("apps").split("，");
 }
@@ -73,22 +76,22 @@ async function post_data(d) {
                   ) {
                     if (x.version !== app_monitor[x.trackId].v) {
                       notifys.push(
-                        `🎉 ${x.trackName} · ${x.version}` // ${flag(k)} first line national flag
-                      );
+                        `· ${x.trackName} · Newver: ${x.version}`
+                      ); // ${flag(k)} first line national flag
                     }
                     if (x.formattedPrice !== app_monitor[x.trackId].p) {
                       notifys.push(
-                        `💸 ${x.trackName} · ${x.formattedPrice}` // ${flag(k)} first line national flag
-                      );
+                        `· ${x.trackName} · Newprice: ${x.formattedPrice}`
+                      ); // ${flag(k)} first line national flag
                     }
                   }
                 } else {
                   notifys.push(
-                    `🎯 ${x.trackName} · ${x.version}` // ${flag(k)} first line national flag
-                  );
+                    `· ${x.trackName} · Ver: ${x.version}`
+                  ); // ${flag(k)} first line national flag
                   notifys.push(
-                    `💵 ${x.trackName} · ${x.formattedPrice}` // ${flag(k)} first line national flag
-                  );
+                    `· ${x.trackName} · Price: ${x.formattedPrice}`
+                  ); // ${flag(k)} first line national flag
                 }
               });
             }
@@ -598,4 +601,4 @@ function API(name = "untitled", debug = false) {
         }
     }
   })(name, debug);
-	}
+}
