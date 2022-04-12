@@ -1,5 +1,5 @@
 const $ = new API("Wishlist", true);
-let apps = ["450464147","499470113","918751511","959841449","1032301823","1126314052","1126386264","1160167263","1254940903","1282297037","1344204781","1357644265","1463298887","1510265452","1517339257","1524435907","1591831530","1608870673","502633252","932747118","1596063349","1443988620","1442620678","1049254261","896694807"]; // appid
+let apps = ["1594183379","450464147","499470113","918751511","959841449","1032301823","1126314052","1126386264","1160167263","1254940903","1282297037","1344204781","1357644265","1463298887","1510265452","1517339257","1524435907","1591831530","1608870673","502633252","932747118","1596063349","1443988620","1442620678","1049254261","896694807"]; // appid
 if ($.read("apps") != "" && $.read("apps") != undefined) {
   apps = $.read("apps").split("，");
 }
@@ -73,21 +73,21 @@ async function post_data(d) {
                   ) {
                     if (x.version !== app_monitor[x.trackId].v) {
                       notifys.push(
-                        `· ${x.trackName} · Newver: ${x.version}`
+                        `· ${x.trackName} · newver ${x.version}`
                       ); // ${flag(k)} first line national flag
                     }
                     if (x.formattedPrice !== app_monitor[x.trackId].p) {
                       notifys.push(
-                        `· ${x.trackName} · Newprice: ${x.formattedPrice}`
+                        `· ${x.trackName} · newprice ${x.formattedPrice}`
                       ); // ${flag(k)} first line national flag
                     }
                   }
                 } else {
                   notifys.push(
-                    `· ${x.trackName} · Ver: ${x.version}`
+                    `· ${x.trackName} · ${x.version}`
                   ); // ${flag(k)} first line national flag
                   notifys.push(
-                    `· ${x.trackName} · Price: ${x.formattedPrice}`
+                    `· ${x.trackName} · ${x.formattedPrice}`
                   ); // ${flag(k)} first line national flag
                 }
               });
@@ -598,4 +598,4 @@ function API(name = "untitled", debug = false) {
         }
     }
   })(name, debug);
-}
+	}
