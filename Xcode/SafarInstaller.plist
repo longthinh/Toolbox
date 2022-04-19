@@ -11,19 +11,19 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>https://dl.dropbox.com/s/8oq9k2yehu631kl/TikTok%2018.0.0.ipa</string>
+					<string>URL</string>
 				</dict>
 				<dict>
 					<key>kind</key>
 					<string>display-image</string>
 					<key>url</key>
-					<string>https://raw.githubusercontent.com/longthinh/Programer/master/Xcode/Icon.png</string>
+					<string>https://raw.githubusercontent.com/longthinh/Programer/master/Xcode/Payload.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
 					<string>full-size-image</string>
 					<key>url</key>
-					<string>https://raw.githubusercontent.com/longthinh/Toolbox/master/Xcode/Icon.png</string>
+					<string>https://raw.githubusercontent.com/longthinh/Toolbox/master/Xcode/Payload.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
