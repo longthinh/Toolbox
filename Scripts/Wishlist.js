@@ -1,5 +1,5 @@
 const $ = new API("Wishlist", true);
-let apps = ["1595306197","1357644265","1405459188","499470113","1254940903","1282297037","1463298887","1510265452","1517339257","1524435907","502633252","1443988620","1442620678","1049254261","896694807"]; // appid
+let apps = ["1581140954","1609781496","1595306197","1357644265","1405459188","499470113","1254940903","1282297037","1463298887","1510265452","1517339257","1524435907","502633252","1443988620","1442620678","1049254261","896694807"]; // appid
 if ($.read("apps") != "" && $.read("apps") != undefined) {
   apps = $.read("apps").split("，");
 }
@@ -73,21 +73,21 @@ async function post_data(d) {
                   ) {
                     if (x.version !== app_monitor[x.trackId].v) {
                       notifys.push(
-                        `· ${x.trackName} · newver ${x.version}`
+                        `${x.trackName} · newver ${x.version}`
                       ); // ${flag(k)} first line national flag
                     }
                     if (x.formattedPrice !== app_monitor[x.trackId].p) {
                       notifys.push(
-                        `· ${x.trackName} · newprice ${x.formattedPrice}`
+                        `${x.trackName} · newprice ${x.formattedPrice}`
                       ); // ${flag(k)} first line national flag
                     }
                   }
                 } else {
                   notifys.push(
-                    `· ${x.trackName} · ${x.version}`
+                    `${x.trackName} · ${x.version}`
                   ); // ${flag(k)} first line national flag
                   notifys.push(
-                    `· ${x.trackName} · ${x.formattedPrice}`
+                    `${x.trackName} · ${x.formattedPrice}`
                   ); // ${flag(k)} first line national flag
                 }
               });
